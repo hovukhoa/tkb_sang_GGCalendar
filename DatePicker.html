@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body { font-family: Arial, sans-serif; text-align: center; padding: 10px; }
+      input { margin: 10px; padding: 5px; }
+      button { background: #4285F4; color: white; border: none; padding: 8px; cursor: pointer; }
+      button:hover { background: #357AE8; }
+    </style>
+  </head>
+  <body>
+    <h3>Chọn ngày Thứ Hai</h3>
+    <input type="date" id="datePicker">
+    <br>
+    <button onclick="submitDate()">Xác nhận</button>
+
+    <script>
+      function submitDate() {
+        var date = document.getElementById('datePicker').value;
+        if (date) {
+          google.script.run.createEventsFromSelectedDate(date);
+          google.script.host.close();
+        } else {
+          alert("Vui lòng chọn một ngày!");
+        }
+      }
+    </script>
+  </body>
+</html>
