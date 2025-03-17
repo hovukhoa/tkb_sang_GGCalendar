@@ -33,7 +33,7 @@ function createEventsFromSelectedDate(dateString) {
   
   var data = sheet.getDataRange().getValues();
   
-  for (var i = 2; i < data.length; i++) { // Bỏ qua tiêu đề
+  for (var i = 1; i < data.length; i++) { // Bỏ qua tiêu đề
     var session = data[i][0]; // S1, S2, ..., C5
     if (!timeSlots[session]) continue;
     
